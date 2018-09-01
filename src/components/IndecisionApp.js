@@ -3,10 +3,12 @@ import AddOption from './AddOption';
 import Options from './Options'
 import Header from "./Header";
 import Action from './Action';
+import OptionModal from './OptionModal';
 
 export default class IndecisionApp extends React.Component {
   state = {
-    options: []
+    options: [],
+    selectedOption : undefined
   }
   
   handleDeleteOptions = () => {
@@ -20,7 +22,9 @@ export default class IndecisionApp extends React.Component {
   handlePick = () => {
     const arr = this.state.options
     const ranNum = Math.floor(Math.random() * arr.length)
-    alert(arr[ranNum])
+    this.setState(() => ({
+      selectedOption : arr[ranNum]
+    }))
   }
   handleAddOption = (option) => {
     if (!option) {
@@ -29,6 +33,10 @@ export default class IndecisionApp extends React.Component {
       return 'This option already exits'
     }
     this.setState((prevState) => ({ options: [...prevState.options, option] }))
+  }
+  
+  handleClearSelectedOption = () => {
+    this.setState(() => ({selectedOption : undefined}))
   }
   componentDidMount() {
     try {
@@ -64,6 +72,10 @@ export default class IndecisionApp extends React.Component {
         />
         <AddOption
           handleAddOption={this.handleAddOption}
+        />
+        <OptionModal 
+          selectedOption = {this.state.selectedOption}
+          handleClearSelectedOption = {this.handleClearSelectedOption}
         />
       </div>
     )
