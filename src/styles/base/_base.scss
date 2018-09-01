@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500');
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: $dark-blue;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: $m-size;
+}
+
+button {
+    cursor: pointer;
+    &:disabled {
+        cursor: default;
+    }
+}
+
