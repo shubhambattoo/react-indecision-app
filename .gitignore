@@ -2,3 +2,4 @@ node_modules/
 .vscode
 src/playground/
 public./
+yarn-error.log
