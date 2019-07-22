@@ -23,7 +23,7 @@
     "live-server": "^1.2.0",
     "node-sass": "^4.9.3",
     "normalize.css": "^8.0.0",
-    "react": "^16.4.2",
+    "react": "^16.8.6",
     "react-dom": "^16.4.2",
     "react-modal": "^3.5.1",
     "sass-loader": "^7.1.0",
